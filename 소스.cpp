@@ -1,28 +1,46 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
-#include <windows.h>
 
 using namespace std;
 
-int A[10] = { 0, };
+int A[10];
+int B[10];
 
 void arr()
 {
-	int Arand;
-	int stop = 1;
-	while (stop)
+	int count = 0;
+	int Arand, Brand;
+	for (int i = 0; i < 10; i++)
 	{
 		Arand = rand() % 10;
-		A[Arand] = 1;
-		for (int i = 0; i < 10; i++)
-		{
-			cout << A[i];
-		}
-		A[Arand] = 0;
-		Sleep(500);
-		system("cls");
+		A[i] = Arand;
 	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		Brand = rand() % 10;
+		B[i] = Brand;
+	}
+	cout << "A배열:";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << A[i] << " ";
+	}
+	cout << endl << "B배열:";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << B[i] << " ";
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		if (A[i] == B[i])
+		{
+			count = count + 10;
+		}
+	}
+	cout << endl;
+	cout << "두 배율의 닮은 비율=" << count << "%";
 }
 int main()
 {
