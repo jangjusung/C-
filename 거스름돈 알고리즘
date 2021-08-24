@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+
+int a[6]={ 500,100,50,10,5,1};
+
+int main()
+{
+	int money = 0;
+	scanf_s("%d", &money);
+	printf("지불한 금액=%d\n", money);
+	int b = 1000 - money;
+	printf("거스름 돈=%d\n", b);
+	int count = 0;
+	for (int i = 0; i < 6; i++)
+	{
+		if (b >= a[i]) {
+			b = b - a[i];
+			printf("%d   ", a[i]);
+			count++;
+			if (b >= a[i])
+			{
+				i--;
+			}
+		}
+	}
+	printf("\n잔돈의 개수 = %d", count);
+	return 0;
+}
